@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Know Your Location Weather - ForecastHub</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="utility.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- NavBar -->
+  <nav class="bg-gray-200 p-15">
+    <ul class="List-none Font-size-23 flex gap-20 wrap between">
+      <li class="pointer bold ForecastHub">ForecastHub</li>
+      <li class="flex center gap-15 wrap">
+        <input type="search" class="p-5 Font-size-15" placeholder="Search Location" id="searchBar">
+        <button id="searchBtn" class="p-5 Font-size-15 pointer bg-transparent">Search</button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Body -->
+  <main id="main">
+    <h1 class="p-15 loc">
+      <span id="location">Mumbai</span>,
+      <span id="area">IN</span>
+    </h1>
+    <div class="flex center coulmn text-center">
+      <div id="weatherImage"></div>
+      <div class="gap-5 flex Font-size-23 m-15 Description">
+        <span>Description :</span><span id="conditionWeather"></span>
+      </div>
+      <div class="flex Font-size-25 bold bg-unique"> <span>Temperature : </span> <span id="temp"></span>&deg;C</div>
+    </div>
+    <div class="flex gap-80 center Font-size-25 wrap p-5 bg-unique2 m-10"
+      style="margin-left: 0; margin-right: 0; margin-bottom: 0;">
+      <div class="flex gap-5">
+        <span>Humidity : </span>
+        <span id="humidity"></span>%
+      </div>
+      <div class="flex gap-5">
+        <span>
+          Feels Like :</span>
+        <span><span id="feels_like"></span>&deg;C</span>
+      </div>
+      <div class="flex gap-5">
+        <span>Max-Temperature :</span>
+        <span><span id="maxTemp"></span>&deg;C</span>
+      </div>
+      <div class="flex gap-5">
+        <span>Min-Temperature :</span>
+        <span><span id="minTemp"></span>&deg;C</span>
+      </div>
+      <div class="flex gap-5">
+        <span>Pressure :</span>
+        <span><span id="pressure"></span></span>
+      </div>
+    </div>
+
+    <h1 class="p-15 flex center text-green" style="background-color: hotpink;">Wind</h1>
+    <div class="flex gap-80 center Font-size-25 wrap p-5 bg-unique2">
+      <div class="flex gap-5">
+        <span>Degree : </span>
+        <span id="degree"></span>&deg;
+      </div>
+      <div class="flex gap-5">
+        <span>Speed : </span>
+        <span id="speed"></span>km/h
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
