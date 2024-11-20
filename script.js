@@ -104,20 +104,20 @@ else {
 const now = new Date(); // Get the current date and time
 const hour = now.getHours(); // Extract the hour (0-23)
 
-if (hour >= 4 && hour < 12) {
+if( hour < 4){
+    main.style.backgroundImage = "url(istockphoto-162515751-612x612.jpg)";
+    weatherImage.style.filter = "invert(1)";
+}
+
+else if(hour < 12) {
     main.style.backgroundImage = "url(istockphoto-516180836-612x612.jpg)";
 }
 
-else if (hour >= 12 && hour < 16) {
+else if (hour < 16) {
     main.style.backgroundImage = "url(istockphoto-917178010-612x612.jpg)";
 }
 
-else if (hour <= 16 && hour < 21) {
+else if (hour < 21) {
     main.style.backgroundImage = "url(evening-7432219_1280.jpg)";
     weatherImage.style.filter = "invert(0.5)"
-}
-
-else {
-    main.style.backgroundImage = "url(istockphoto-162515751-612x612.jpg)";
-    weatherImage.style.filter = "invert(1)";
 }
