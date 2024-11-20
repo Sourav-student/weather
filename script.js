@@ -106,7 +106,6 @@ const hour = now.getHours(); // Extract the hour (0-23)
 
 if (hour >= 4 && hour < 12) {
     main.style.backgroundImage = "url(istockphoto-516180836-612x612.jpg)";
-    weatherImage.style.filter = "invert(0)"
 }
 
 else if (hour >= 12 && hour < 16) {
