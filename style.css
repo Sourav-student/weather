@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(165, 165, 140);
+}
+
+a {
+    text-decoration: none;
+}
+
+a li {
+    color: black;
+}
+
+main {
+    border: 3px solid orange;
+    border-radius:0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: visible;
+}
+
+#searchBar {
+    outline-color: rgb(255, 191, 0);
+}
+
+#searchBtn {
+    border-color: rgb(255, 191, 0);
+}
+
+.img1 {
+    height: 300px;
+    width: 300px;
+    filter:contrast(50%);
+}
+
+.Description{
+    background-color: yellow;
+}
+
+.loc{
+    background-color: aqua;
+}
+
+.ForecastHub{
+    background-image: linear-gradient(123deg, rgb(214, 50, 50), rgb(207, 151, 45), rgb(39, 194, 39), rgb(57, 57, 195));
+    font-size: 30px;
+}
