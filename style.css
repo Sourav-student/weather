@@ -34,7 +34,6 @@ main {
 .img1 {
     height: 300px;
     width: 300px;
-    filter:contrast(50%);
 }
 
 .Description{

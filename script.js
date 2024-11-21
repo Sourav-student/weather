@@ -47,12 +47,37 @@ async function weather(city) {
         degree.innerHTML = data.wind.deg;
         speed.innerHTML = Math.ceil(data.wind.speed * (18 / 5));
 
+
+        // Images as per the time
+
+        const localTime = new Date(Date.now() + data.timezone * 1000);
+        const hour = localTime.getHours();
+
+
+        if (hour < 4) {
+            main.style.backgroundImage = "url(istockphoto-162515751-612x612.jpg)";
+            weatherImage.style.filter = "invert(1)";
+        }
+
+        else if (hour < 12) {
+            main.style.backgroundImage = "url(istockphoto-516180836-612x612.jpg)";
+        }
+
+        else if (hour < 16) {
+            main.style.backgroundImage = "url(istockphoto-917178010-612x612.jpg)";
+        }
+
+        else if (hour < 21) {
+            main.style.backgroundImage = "url(evening-7432219_1280.jpg)";
+            weatherImage.style.filter = "invert(0.5)"
+        }
+
     } catch (error) {
         console.error("An error occurred:", error.message);
     }
 }
 
-weather("Mumbai")
+weather("Mumbai");
 
 
 function showWeather() {
@@ -97,27 +122,4 @@ else if (temp.innerHTML < 40) {
 
 else {
     bgUnique.style.backgroundColor = "#ef1212"
-}
-
-
-// Images as per the time
-const now = new Date(); // Get the current date and time
-const hour = now.getHours(); // Extract the hour (0-23)
-
-if( hour < 4){
-    main.style.backgroundImage = "url(istockphoto-162515751-612x612.jpg)";
-    weatherImage.style.filter = "invert(1)";
-}
-
-else if(hour < 12) {
-    main.style.backgroundImage = "url(istockphoto-516180836-612x612.jpg)";
-}
-
-else if (hour < 16) {
-    main.style.backgroundImage = "url(istockphoto-917178010-612x612.jpg)";
-}
-
-else if (hour < 21) {
-    main.style.backgroundImage = "url(evening-7432219_1280.jpg)";
-    weatherImage.style.filter = "invert(0.5)"
 }
