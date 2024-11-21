@@ -22,12 +22,17 @@ async function weather(city) {
 
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            if (response.status === 404) {
+                alert("Location not found. Please check the city name and try again.");
+            } else {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return; // Exit the function if the location is not found
         }
 
         const data = await response.json();
 
-
+        locationCity.innerHTML = data.name;
         area.innerHTML = data.sys.country;
 
         const iconCode = data.weather[0].icon;
@@ -54,23 +59,28 @@ async function weather(city) {
         const hour = localTime.getHours();
 
 
-        if (hour < 4) {
-            main.style.backgroundImage = "url(istockphoto-162515751-612x612.jpg)";
-            weatherImage.style.filter = "invert(1)";
+        // Ensure `hour` is defined and valid
+        if (typeof hour === "number" && hour >= 0 && hour < 24) {
+            if (hour < 4) {
+                main.style.backgroundImage = "url(istockphoto-162515751-612x612.jpg)";
+                weatherImage.style.filter = "invert(1)";
+            } else if (hour < 12) {
+                main.style.backgroundImage = "url(istockphoto-516180836-612x612.jpg)";
+                weatherImage.style.filter = ""; // Clear any previous filter
+            } else if (hour < 16) {
+                main.style.backgroundImage = "url(istockphoto-917178010-612x612.jpg)";
+                weatherImage.style.filter = ""; // Clear any previous filter
+            } else if (hour < 21) {
+                main.style.backgroundImage = "url(evening-7432219_1280.jpg)";
+                weatherImage.style.filter = "invert(0.5)";
+            } else {
+                main.style.backgroundImage = "url(istockphoto-162515751-612x612.jpg)"; // Add a fallback image for night
+                weatherImage.style.filter = "invert(1)";
+            }
+        } else {
+            console.error("Invalid hour value");
         }
 
-        else if (hour < 12) {
-            main.style.backgroundImage = "url(istockphoto-516180836-612x612.jpg)";
-        }
-
-        else if (hour < 16) {
-            main.style.backgroundImage = "url(istockphoto-917178010-612x612.jpg)";
-        }
-
-        else if (hour < 21) {
-            main.style.backgroundImage = "url(evening-7432219_1280.jpg)";
-            weatherImage.style.filter = "invert(0.5)"
-        }
 
     } catch (error) {
         console.error("An error occurred:", error.message);
@@ -85,7 +95,6 @@ function showWeather() {
     searchBtn.addEventListener("click", () => {
         const city = searchBar.value;
         weather(city);
-        locationCity.innerHTML = city;
     })
 
     //This is for PC
@@ -93,7 +102,6 @@ function showWeather() {
         if (event.key === "Enter") { // Check if the "Enter" key was pressed
             const city = searchBar.value;
             weather(city); // Call the weather function with the city input
-            locationCity.innerHTML = city;
         }
     });
 
