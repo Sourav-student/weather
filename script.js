@@ -55,31 +55,39 @@ async function weather(city) {
 
         // Images as per the time
 
-        const localTime = new Date(Date.now() + data.timezone * 1000);
-        const hour = localTime.getHours();
+        // Ensure data.timezone is in seconds
+        if (typeof data.timezone === "number") {
+            // Current UTC time in milliseconds
+            const utcTime = new Date(Date.now());
+
+            // Calculate local time based on data.timezone (in seconds)
+            const localTime = new Date(utcTime.getTime() + data.timezone * 1000);
+
+            // Extract the hour
+            const hour = localTime.getUTCHours(); // Use UTC hours only
+
+            // Update background based on the hour
+            if (hour >= 0 && hour < 24) {
+                if (hour < 4) {
+                    main.style.backgroundImage = "url(istockphoto-162515751-612x612.jpg)";
+                    weatherImage.style.filter = "invert(1)";
+                } else if (hour < 12) {
+                    main.style.backgroundImage = "url(istockphoto-516180836-612x612.jpg)";
+                    weatherImage.style.filter = "";
+                } else if (hour < 16) {
+                    main.style.backgroundImage = "url(istockphoto-917178010-612x612.jpg)";
+                    weatherImage.style.filter = "";
+                } else if (hour < 21) {
+                    main.style.backgroundImage = "url(evening-7432219_1280.jpg)";
+                    weatherImage.style.filter = "invert(0.5)";
+                } else {
+                    main.style.backgroundImage = "url(istockphoto-162515751-612x612.jpg)";
+                    weatherImage.style.filter = "invert(1)";
+                }
+            } 
+        } 
 
 
-        // Ensure `hour` is defined and valid
-        if (typeof hour === "number" && hour >= 0 && hour < 24) {
-            if (hour < 4) {
-                main.style.backgroundImage = "url(istockphoto-162515751-612x612.jpg)";
-                weatherImage.style.filter = "invert(1)";
-            } else if (hour < 12) {
-                main.style.backgroundImage = "url(istockphoto-516180836-612x612.jpg)";
-                weatherImage.style.filter = ""; // Clear any previous filter
-            } else if (hour < 16) {
-                main.style.backgroundImage = "url(istockphoto-917178010-612x612.jpg)";
-                weatherImage.style.filter = ""; // Clear any previous filter
-            } else if (hour < 21) {
-                main.style.backgroundImage = "url(evening-7432219_1280.jpg)";
-                weatherImage.style.filter = "invert(0.5)";
-            } else {
-                main.style.backgroundImage = "url(istockphoto-162515751-612x612.jpg)"; // Add a fallback image for night
-                weatherImage.style.filter = "invert(1)";
-            }
-        } else {
-            console.error("Invalid hour value");
-        }
 
 
     } catch (error) {
