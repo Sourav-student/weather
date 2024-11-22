@@ -53,6 +53,18 @@ async function weather(city) {
             weatherImage.innerHTML = `<img src="cloud.png" alt="weatherImage" class = "img1">`;
         }
 
+        else if (conditionWeather.innerText == "Snow" ) {
+            weatherImage.innerHTML = `<img src="snow.png" alt="weatherImage" class = "img1">`;
+        }
+
+        else if (conditionWeather.innerText == "Thunderstorm" ) {
+            weatherImage.innerHTML = `<img src="Thunderstorm.png" alt="weatherImage" class = "img1">`;
+        }
+
+        else if (conditionWeather.innerText == "Drizzle" ) {
+            weatherImage.innerHTML = `<img src="Drizzle.png" alt="weatherImage" class = "img1">`;
+        }
+
         //Main 
         temp.innerHTML = Math.round(data.main.temp - 273.15);
         humidity.innerHTML = data.main.humidity;
