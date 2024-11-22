@@ -45,7 +45,11 @@ async function weather(city) {
             weatherImage.innerHTML = `<img src="rain.png" alt="weatherImage" class = "img1">`;
         }
 
-        else if (conditionWeather.innerText == "Mist" && conditionWeather.innerText == "Haze" ) {
+        else if (conditionWeather.innerText == "Mist" ) {
+            weatherImage.innerHTML = `<img src="mist.png" alt="weatherImage" class = "img1">`;
+        }
+
+        else if (conditionWeather.innerText == "Haze" ) {
             weatherImage.innerHTML = `<img src="mist.png" alt="weatherImage" class = "img1">`;
         }
 
