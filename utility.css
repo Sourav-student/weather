@@ -96,6 +96,10 @@
     align-items: center;
 }
 
+.bg-unique{
+ background-color: yellow;
+}
+
 .bg-unique2{
     background-image: repeating-linear-gradient(red, orange);
 }

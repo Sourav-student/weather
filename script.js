@@ -5,7 +5,6 @@ const locationCity = document.getElementById("location");
 const area = document.getElementById("area");
 const weatherImage = document.getElementById("weatherImage");
 const temp = document.getElementById("temp");
-const bgUnique = document.querySelector('.bg-unique');
 const humidity = document.getElementById("humidity");
 const maxTemp = document.getElementById("maxTemp");
 const minTemp = document.getElementById("minTemp");
@@ -46,7 +45,7 @@ async function weather(city) {
             weatherImage.innerHTML = `<img src="rain.png" alt="weatherImage" class = "img1">`;
         }
 
-        else if (conditionWeather.innerText == "Mist" ) {
+        else if (conditionWeather.innerText == "Mist" && conditionWeather.innerText == "Haze" ) {
             weatherImage.innerHTML = `<img src="mist.png" alt="weatherImage" class = "img1">`;
         }
 
@@ -139,26 +138,3 @@ function showWeather() {
 }
 
 showWeather();
-
-
-
-//Changing color of temperature according to temperature
-if (temp.innerHTML < 10) {
-    bgUnique.style.backgroundColor = "#e0c5c5"
-}
-
-else if (temp.innerHTML < 20) {
-    bgUnique.style.backgroundColor = "#dd8888"
-}
-
-else if (temp.innerHTML < 30) {
-    bgUnique.style.backgroundColor = "#d65e5e"
-}
-
-else if (temp.innerHTML < 40) {
-    bgUnique.style.backgroundColor = "#d33333"
-}
-
-else {
-    bgUnique.style.backgroundColor = "#ef1212"
-}
