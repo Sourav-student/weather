@@ -24,11 +24,15 @@ main {
 }
 
 #searchBar {
-    outline-color: rgb(255, 191, 0);
+    outline-color: rgb(255, 60, 0);
+    border-radius: 10px;
+    font-size: 23px;
 }
 
 #searchBtn {
-    border-color: rgb(255, 191, 0);
+    border-color: rgb(255, 72, 0);
+    border-radius: 10px;
+    font-size: 23px;
 }
 
 .img1 {
@@ -48,5 +52,31 @@ main {
 
 .ForecastHub{
     background-image: linear-gradient(123deg, rgb(214, 50, 50), rgb(207, 151, 45), rgb(39, 194, 39), rgb(57, 57, 195));
-    font-size: 30px;
+    -webkit-text-stroke-width: thin;
+    font-size: 27px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.weather-item{
+    padding: 30px;
+}
+
+#weatherResult{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px;
+}
+
+#weatherResult div{
+    padding: 10px;
+    border: 2px solid black;
+    font-size: 27px;
+    border-radius: 10px;
+    background-color: aquamarine;
+}
+
+.block{
+    display: block;
 }
