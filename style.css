@@ -1,10 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-body {
-    background-color: rgb(165, 165, 140);
+    color:#ffffff ;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 
 a {
@@ -15,18 +13,11 @@ a li {
     color: black;
 }
 
-main {
-    border: 3px solid orange;
-    border-radius:0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    backface-visibility: visible;
-}
-
 #searchBar {
     outline-color: rgb(255, 60, 0);
     border-radius: 10px;
     font-size: 23px;
+    color: black !important;
 }
 
 #searchBtn {
@@ -36,21 +27,20 @@ main {
 }
 
 .img1 {
-    height: 300px;
-    width: 300px;
-    position: relative;
-    z-index: 10;
+   width: 150px;
+   height: 150px;
+   margin: 10px;
+   border-radius: 20px;
+   box-shadow: 1px 1px 10px 1px rgb(40, 40, 40);
+   filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
+   background-color: rgb(155, 230, 255);
 }
 
-.Description{
+.Description {
     background-color: yellow;
 }
 
-.loc{
-    background-color: aqua;
-}
-
-.ForecastHub{
+.ForecastHub {
     background-image: linear-gradient(123deg, rgb(214, 50, 50), rgb(207, 151, 45), rgb(39, 194, 39), rgb(57, 57, 195));
     -webkit-text-stroke-width: thin;
     font-size: 27px;
@@ -58,25 +48,40 @@ main {
     padding: 5px;
 }
 
-.weather-item{
+.weather-item {
     padding: 30px;
 }
 
-#weatherResult{
+#weatherResult {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    margin: 20px;
+    gap: 10px;
 }
 
-#weatherResult div{
+#weatherResult div {
     padding: 10px;
     border: 2px solid black;
-    font-size: 27px;
+    font-size: 16px;
     border-radius: 10px;
-    background-color: aquamarine;
 }
 
-.block{
+.block {
     display: block;
+}
+
+.bgImg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: -1;
+}
+
+.bg-img{
+    width: 100%;
+    height: 100%;
 }

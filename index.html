@@ -4,7 +4,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Stay ahead with real-time, accurate weather forecasts for your city! Get hourly updates, 5-day forecasts, live radar, severe weather alerts, and tips for outdoor activities. Trusted by millions, your go-to source for weather insights.">
+  <meta name="description"
+    content="Get real-time weather updates, hourly forecasts, and 7-day predictions for your city. Stay updated with temperature, humidity, and wind conditions.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Live Weather Updates & Forecasts">
+  <meta property="og:description"
+    content="Check the latest weather updates, temperature, and forecast for your city. Stay prepared with real-time weather alerts.">
+  <meta property="og:url" content="https://forecasthub.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Live Weather Forecast | Real-Time Updates">
+  <meta name="twitter:description"
+    content="Stay informed with accurate weather forecasts, temperature reports, and severe weather alerts.">
+  <meta name="twitter:site" content="@YourTwitterHandle">
+
   <title>ForecastHub - Know Your Location Weather</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="utility.css">
@@ -12,9 +26,9 @@
 </head>
 
 <body>
-
+  <div class="bgImg"></div>
   <!-- NavBar -->
-  <nav class="bg-gray-200 p-15">
+  <nav class="p-15">
     <ul class="List-none Font-size-23 flex gap-20 wrap between">
       <li class="pointer bold ForecastHub">ForecastHub</li>
       <li class="flex center gap-15 wrap">
@@ -26,60 +40,59 @@
 
   <!-- Main Body -->
   <main id="main">
-    <h1 class="p-15 loc">
+    <h2 class="inline-flex border w-180 flex center">
       <span id="location">Mumbai</span>,
       <span id="area">IN</span>
-    </h1>
-    <div class="flex center coulmn text-center">
+    </h2>
+    <div class="flex coulmn text-center h-300">
       <div id="weatherImage"></div>
-      <div class="gap-5 flex Font-size-23 m-15 Description">
+      <div class="gap-5 flex Font-size-23 m-15 border">
         <span>Description :</span><span id="conditionWeather"></span>
       </div>
-      <div class="flex Font-size-25 bold bg-unique"> <span>Temperature : </span> <span id="temp"></span>&deg;C</div>
+      <div class="flex Font-size-25 bold border"> <span>Temperature : </span> <span id="temp"></span>&deg;C</div>
     </div>
-    <div class="flex gap-80 center Font-size-25 wrap p-5 bg-unique2 m-10"
+    <div class="flex gap-80 center Font-size-25 wrap p-5 m-10"
       style="margin-left: 0; margin-right: 0; margin-bottom: 0;">
-      <div class="flex gap-5">
+      <div class="flex gap-5 border">
         <span>Humidity : </span>
         <span id="humidity"></span>%
       </div>
-      <div class="flex gap-5">
+      <div class="flex gap-5 border">
         <span>
           Feels Like :</span>
         <span><span id="feels_like"></span>&deg;C</span>
       </div>
-      <div class="flex gap-5">
+      <div class="flex gap-5 border">
         <span>Max-Temperature :</span>
         <span><span id="maxTemp"></span>&deg;C</span>
       </div>
-      <div class="flex gap-5">
+      <div class="flex gap-5 border">
         <span>Min-Temperature :</span>
         <span><span id="minTemp"></span>&deg;C</span>
       </div>
-      <div class="flex gap-5">
+      <div class="flex gap-5 border text-center">
         <span>Pressure :</span>
         <span><span id="pressure"></span>mb</span>
       </div>
+      <div class="flex center Font-size-20 wrap p-5 border">
+        <h3 class="p-15 flex center">Wind</h3>
+        <div class="flex gap-5 coulmn">
+          <div class="flex gap-5">
+            <span>Degree : </span>
+            <span id="degree"></span>&deg;
+          </div>
+          <div class="flex gap-5">
+            <span>Speed : </span>
+            <span id="speed"></span>km/h
+          </div>
+        </div>
+      </div>
     </div>
+    <h2 class="p-5 Font-size-23 center flex border inline-flex">Weather Forecast Of 5 Days</h2>
+    <div id="weatherResult" class="border"></div>
 
-    <h1 class="p-15 flex center text-green" style="background-color: rgb(56, 37, 37); color: rgb(4, 255, 0);">Wind</h1>
-    <div class="flex gap-80 center Font-size-25 wrap p-5 bg-unique2">
-      <div class="flex gap-5">
-        <span>Degree : </span>
-        <span id="degree"></span>&deg;
-      </div>
-      <div class="flex gap-5">
-        <span>Speed : </span>
-        <span id="speed"></span>km/h
-      </div>
-    </div>
   </main>
-
-  <h1 class="p-5 Font-size-23 center flex">Weather Forecast Of 5 Days</h1>
-  <div id="fiveDay"></div>
-  <div id="weatherResult"></div>
-  
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 
 </html>

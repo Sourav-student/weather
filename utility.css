@@ -85,7 +85,7 @@
 
 
 .bg-transparent{
-    background-color: transparent, white;
+    background-color: rgb(255, 0, 0);
 }
 
 .coulmn{
@@ -112,10 +112,35 @@
     margin: 15px;
 }
 
+.w-180{
+    width: 180px !important;
+    
+}
+
 .text-green{
     color: rgb(23, 102, 23);
 }
 
 .text-red{
     color: rgb(210, 33, 33);
+}
+
+.h-300{
+    height: 300px;
+}
+
+.bg-brown-100 {
+    background-color: rgb(224, 126, 126);
+}
+
+.border{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient( black, transparent);
+}
+
+.inline-flex{
+    display: inline-flex;
+    margin: 10px;
 }
