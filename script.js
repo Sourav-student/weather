@@ -117,26 +117,18 @@ async function getWeather(city) {
     try {
         const res = await fetch(url);
         const weatherData = await res.json();
+        console.log(weatherData)
+        
+        let forecast = weatherData.list.map((item) => (
+            `<div><h3>Date : ${item.dt_txt}</h3>
+            <h4>Temperature : ${item.main.temp}</h4>
+            <h4>Description : ${item.weather[0].description}</h4>
+            <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png" alt="Weather_Condition" class = "img2"></div>`
 
-        // Extract city name
-        const cityName = weatherData.city.name;
-        // Filter forecast data to get one entry per day (closest to 12:00 PM)
-        const dailyForecast = weatherData.list.filter((item) =>
-            item.dt_txt.includes("06:00:00")
-        );
+        )).join("");
+        
 
-        // Map filtered data to display only 5 days
-        const forecast = dailyForecast.slice(0, 5).map(
-            (item) => `
-            <div>
-                <p><strong>Date:</strong> ${new Date(item.dt * 1000).toDateString()}</p>
-                <p><strong>Temperature:</strong> ${(item.main.temp)}°C</p>
-                <p><strong>Weather:</strong> ${item.weather[0].main}</p>
-            </div>
-        `
-        ).join('');
-
-        weatherResult.innerHTML = `${forecast}`
+        weatherResult.innerHTML = `${forecast}`;
 
     } catch (error) {
         console.error("An error occurred:", error.message);
