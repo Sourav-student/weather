@@ -29,7 +29,7 @@
   <div class="bgImg"></div>
   <!-- NavBar -->
   <nav class="p-15">
-    <ul class="List-none Font-size-23 flex gap-20 wrap between">
+    <ul class="List-none Font-size-25 flex gap-20 wrap between">
       <li class="pointer bold ForecastHub">ForecastHub</li>
       <li class="flex center gap-15 wrap">
         <input type="search" class="p-5 Font-size-15" placeholder="Search Location" id="searchBar">
@@ -39,53 +39,14 @@
   </nav>
 
   <!-- Main Body -->
-  <main id="main">
-    <h2 class="inline-flex w-180 flex center">
+  <main>
+    <h1 class="inline-flex w-auto flex center">
       <span id="location">Mumbai</span>,
       <span id="area">IN</span>
-    </h2>
-    <div id="weatherImage"></div>
-    <div class="flex coulmn text-center">
-      <div class="gap-5 flex Font-size-23 m-15">
-        <span>Description :</span><span id="conditionWeather"></span>
-      </div>
-      <div class="flex Font-size-25 bold"> <span>Temperature : </span> <span id="temp"></span>&deg;C</div>
-      <div class="flex gap-20 center Font-size-25 wrap text-center p-5 m-10">
-        <div class="flex gap-5">
-          <span>Humidity : </span>
-          <span id="humidity"></span>%
-        </div>
-        <div class="flex gap-5">
-          <span>
-            Feels Like :</span>
-          <span><span id="feels_like"></span>&deg;C</span>
-        </div>
-        <div class="flex gap-5">
-          <span>Max-Temperature :</span>
-          <span><span id="maxTemp"></span>&deg;C</span>
-        </div>
-        <div class="flex gap-5">
-          <span>Min-Temperature :</span>
-          <span><span id="minTemp"></span>&deg;C</span>
-        </div>
-        <div class="flex gap-5 text-center">
-          <span>Pressure :</span>
-          <span><span id="pressure"></span>mb</span>
-        </div>
-        <div class="flex center Font-size-20 wrap p-5">
-          <h3 class="p-15 flex center">Wind</h3>
-          <div class="flex gap-5 coulmn">
-            <div class="flex gap-5">
-              <span>Degree : </span>
-              <span id="degree"></span>&deg;
-            </div>
-            <div class="flex gap-5">
-              <span>Speed : </span>
-              <span id="speed"></span>km/h
-            </div>
-          </div>
-        </div>
-      </div>
+    </h1>
+    <div class="flex center wrap box1">
+      <div id="weatherImage"></div>
+      <div id="weatherResult"></div>
     </div>
   </main>
   <script type="module" src="script.js"></script>

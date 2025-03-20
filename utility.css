@@ -83,6 +83,9 @@
     justify-content:space-between;
 }
 
+.around{
+    justify-content: space-around;
+}
 
 .bg-transparent{
     background-color: rgb(255, 0, 0);
@@ -144,4 +147,8 @@
 .inline-flex{
     display: inline-flex;
     margin: 10px;
+}
+
+.w-auto{
+    width: auto;
 }
